@@ -10,7 +10,18 @@
         <a href="{{ site.docs }}" class="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Docs</a>
         <a href="{{ site.playground }}" class="hidden text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 sm:inline dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Playground</a>
         <a href="{{ site.github }}" class="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <button type="button" data-theme-toggle class="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600 dark:border-gray-700 dark:text-gray-300" aria-label="Toggle theme">Theme</button>
+        <button
+          type="button"
+          class="theme-toggle rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+          aria-label="Toggle dark mode"
+        >
+          <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
       </div>
     </nav>
   </div>
