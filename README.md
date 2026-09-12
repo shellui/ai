@@ -1,6 +1,6 @@
 # shellui.ai
 
-Agent onboarding for [Shellui](https://shellui.com) — Netlify-style `fetch https://shellui.ai`.
+Agent onboarding for [Shellui](https://shellui.com) — `fetch https://shellui.ai` for coding agents.
 
 ## Develop
 

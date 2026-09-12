@@ -1,7 +1,7 @@
 {
   "name": "shellui-ai",
   "version": "0.1.0",
-  "description": "shellui.ai — agent onboarding for Shellui (Netlify-style fetch bootstrap).",
+  "description": "shellui.ai — agent onboarding for Shellui (fetch bootstrap for coding agents).",
   "private": true,
   "type": "module",
   "scripts": {
