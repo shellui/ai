@@ -1,0 +1,28 @@
+{
+  "name": "shellui-ai",
+  "version": "0.1.0",
+  "description": "shellui.ai — agent onboarding for Shellui (Netlify-style fetch bootstrap).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "build": "rm -rf _site && eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellui/ai.git"
+  },
+  "author": "Shellui",
+  "license": "MIT",
+  "homepage": "https://shellui.ai",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@tailwindplus/elements": "^1.0.22",
+    "alpinejs": "^3.16.2"
+  }
+}

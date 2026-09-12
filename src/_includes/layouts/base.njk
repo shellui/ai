@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{ site.locale or 'en' }}" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>{{ metaTitle }}</title>
+    <meta name="description" content="{{ metaDescription }}" />
+    <meta name="author" content="{{ site.author }}" />
+    <link rel="canonical" href="{{ canonical }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ metaTitle }}" />
+    <meta property="og:description" content="{{ metaDescription }}" />
+    <meta property="og:url" content="{{ canonical }}" />
+    <meta property="og:site_name" content="shellui.ai" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ metaTitle }}" />
+    <meta name="twitter:description" content="{{ metaDescription }}" />
+    <link rel="icon" href="/img/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var theme =
+          stored ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        if (theme === "dark") document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+  <body class="flex min-h-full flex-col bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-50">
+    {% include "logo-sprite.njk" %}
+    {% include "nav.njk" %}
+    <main class="relative z-10 flex-1">
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+    <script src="/assets/js/alpine.min.js" defer></script>
+    <script src="/assets/js/elements.js" type="module"></script>
+    <script src="/assets/js/site.js" defer></script>
+  </body>
+</html>

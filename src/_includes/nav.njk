@@ -1,0 +1,17 @@
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="relative z-50 border-b border-gray-200/50 bg-white/80 backdrop-blur-md dark:border-gray-800/50 dark:bg-gray-950/80">
+    <nav class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8" aria-label="Global">
+      <a href="/" class="inline-flex items-center gap-2 font-mono text-sm sm:text-base" aria-label="shellui.ai">
+        {% include "logo.njk" %}
+        <span class="hidden sm:inline"><span class="text-gray-900 dark:text-white">shellui</span><span class="text-gray-400">.ai</span></span>
+      </a>
+      <div class="flex items-center gap-3 sm:gap-5">
+        <a href="{{ site.website }}" class="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Website</a>
+        <a href="{{ site.docs }}" class="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Docs</a>
+        <a href="{{ site.playground }}" class="hidden text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 sm:inline dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Playground</a>
+        <a href="{{ site.github }}" class="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button type="button" data-theme-toggle class="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600 dark:border-gray-700 dark:text-gray-300" aria-label="Toggle theme">Theme</button>
+      </div>
+    </nav>
+  </div>
+</header>

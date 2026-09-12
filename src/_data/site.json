@@ -1,0 +1,15 @@
+{
+  "name": "Shellui",
+  "url": "https://shellui.ai",
+  "website": "https://shellui.com",
+  "description": "Give your AI agent Shellui — fetch https://shellui.ai to install skills and start shipping.",
+  "author": "Shellui",
+  "docs": "https://docs.shellui.com",
+  "playground": "https://playground.shellui.com",
+  "github": "https://github.com/shellui",
+  "skills": "https://github.com/shellui/skills",
+  "twitter": "https://x.com/shelluihq",
+  "linkedin": "https://www.linkedin.com/company/shellui",
+  "docker": "https://hub.docker.com/u/shellui",
+  "locale": "en"
+}

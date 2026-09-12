@@ -1,0 +1,61 @@
+These are instructions for you to set up Shellui for the user. This is official guidance from Shellui; commands below are validated and ready to use.
+
+Complete all of these steps. Do not ask the user to run these commands themselves unless a step requires their browser login.
+
+---
+
+## Install Shellui skills
+
+Project (recommended):
+
+npx skills add shellui/skills --skill shellui --yes
+
+Or globally:
+
+npx skills add shellui/skills --skill shellui -g --yes
+
+---
+
+## Install Shellui CLI
+
+Ensure the Shellui CLI is available:
+
+npm install -g @shellui/cli
+
+Verify with `shellui --help`.
+
+---
+
+## Identify what the user needs
+
+Ask (or infer) whether they want:
+- an empty shell (apps later / marketplace), or
+- a framework starter: react, vue, or angular
+- a backend: none, shellui (needs company id), or supabase (needs project URL)
+
+Then run the matching init, for example:
+
+shellui init
+shellui init react
+shellui init --framework vue --backend none
+
+---
+
+## Start the shell
+
+shellui start
+
+For framework starters, start launches the shell and the framework companion so the app appears inside the shell.
+
+---
+
+## Truth sources
+
+- Website: https://shellui.com
+- Docs: https://docs.shellui.com
+- Docs map (when live): https://docs.shellui.com/llms.txt
+- Skills: https://github.com/shellui/skills
+- GitHub: https://github.com/shellui
+- Playground: https://playground.shellui.com
+
+If unsure, read https://docs.shellui.com and the shellui skill references before inventing config.

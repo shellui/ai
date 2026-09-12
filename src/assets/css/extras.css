@@ -1,0 +1,440 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Circular theme reveal via View Transitions API (tweakcn-style) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 0;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+  animation: theme-reveal 0.4s ease-in-out forwards;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
+    opacity: 0.7;
+  }
+  to {
+    clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+.page-top {
+  @apply pt-20 md:pt-24 lg:pt-32;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.nav-burger {
+  position: relative;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.nav-burger span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 1.25rem;
+  height: 1.5px;
+  border-radius: 1px;
+  background: currentColor;
+  transition:
+    transform 0.22s ease,
+    opacity 0.18s ease,
+    top 0.22s ease;
+}
+
+.nav-burger span:nth-child(1) {
+  top: 0.2rem;
+}
+
+.nav-burger span:nth-child(2) {
+  top: calc(50% - 0.75px);
+}
+
+.nav-burger span:nth-child(3) {
+  top: calc(100% - 0.2rem - 1.5px);
+}
+
+.nav-burger.is-open span:nth-child(1) {
+  top: calc(50% - 0.75px);
+  transform: rotate(45deg);
+}
+
+.nav-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger.is-open span:nth-child(3) {
+  top: calc(50% - 0.75px);
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-burger span {
+    transition: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+  }
+}
+
+.app-icon-gloss,
+.app-icon-shine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.app-icon-gloss {
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0.55) 0%,
+    rgb(255 255 255 / 0.12) 46%,
+    transparent 52%
+  );
+}
+
+.app-icon-shine::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.15) 35%,
+    rgb(255 255 255 / 0.75) 50%,
+    rgb(255 255 255 / 0.15) 65%,
+    transparent 100%
+  );
+  transform: translateX(-180%) skewX(-18deg);
+}
+
+.playground-cta:hover .app-icon-shine::after {
+  animation: app-icon-shine 0.9s ease-in-out;
+}
+
+@keyframes app-icon-shine {
+  0% {
+    transform: translateX(-180%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(280%) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playground-cta:hover .app-icon-shine::after {
+    animation: none;
+  }
+}
+
+.prose {
+  max-width: 48rem;
+}
+
+.prose :where(h1, h2) {
+  @apply mt-[1.75em] mb-[0.6em] text-gray-900 dark:text-white;
+}
+
+.prose :where(h3) {
+  @apply mt-[0.5em] mb-[0.6em] text-gray-900 dark:text-white;
+}
+
+.prose :where(h1) {
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.prose :where(h2) {
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+.prose h2 .role-badge {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.prose :where(h3) {
+  font-size: 1.25rem;
+}
+
+.prose :where(p, ul, ol) {
+  @apply mb-4 text-gray-600 dark:text-gray-400;
+}
+
+.prose :where(ul) {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.prose :where(ol) {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+
+.prose :where(a) {
+  @apply text-primary-ink underline underline-offset-2 dark:text-primary;
+}
+
+.prose a.outbound-button {
+  @apply bg-white text-gray-900 no-underline hover:bg-gray-50 hover:text-gray-900 hover:no-underline dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 dark:hover:text-gray-900;
+}
+
+.prose :where(code) {
+  @apply font-mono text-[0.9em];
+}
+
+.prose :where(pre) {
+  @apply my-5 overflow-x-auto rounded-md border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900;
+}
+
+.prose :where(pre code) {
+  @apply text-gray-900 dark:text-gray-50;
+}
+
+.article-body {
+  @apply mt-10 text-gray-600 dark:text-gray-400;
+}
+
+.article-body > :where(p, ul, ol, h2, h3, blockquote, pre, .article-quote) {
+  @apply max-w-2xl;
+}
+
+.article-body > p {
+  @apply mt-8 text-base/7;
+}
+
+.article-body > p:first-child {
+  @apply mt-0;
+}
+
+.article-body > h2 + p,
+.article-body > h3 + p {
+  @apply mt-6;
+}
+
+.article-body > h2 {
+  @apply mt-16 text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white;
+}
+
+.article-body > h3 {
+  @apply mt-12 text-xl font-semibold tracking-tight text-gray-900 dark:text-white;
+}
+
+.article-body > ul {
+  @apply mt-8 max-w-xl space-y-8;
+  list-style: none;
+  padding-left: 0;
+}
+
+.article-body > ul > li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.article-body > ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--color-primary-ink);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.dark .article-body > ul > li::before {
+  background-color: var(--color-primary);
+}
+
+.article-body > ul strong {
+  @apply inline font-semibold text-gray-900 dark:text-white;
+}
+
+.article-body > ol {
+  @apply mt-8 list-decimal space-y-4 pl-5;
+}
+
+.article-body > blockquote {
+  @apply mt-10 border-l border-primary-ink pl-9 font-semibold text-gray-900 dark:border-primary dark:text-white;
+}
+
+.article-body a {
+  @apply text-primary-ink underline underline-offset-2 dark:text-primary;
+}
+
+.article-body code {
+  @apply font-mono text-[0.9em];
+}
+
+.article-body pre {
+  @apply my-8 overflow-x-auto rounded-md border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-900;
+}
+
+.article-body pre code {
+  @apply text-gray-900 dark:text-gray-50;
+}
+
+.article-body p:has(> img:only-child) {
+  @apply mt-16 max-w-none;
+}
+
+.article-body p:has(> img:only-child) img {
+  @apply aspect-video rounded-xl bg-gray-50 object-cover dark:bg-gray-900;
+}
+
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px color-mix(in oklab, var(--color-primary) 25%, transparent);
+}
+
+.dark .feature-card:hover {
+  box-shadow: 0 10px 25px rgb(0 0 0 / 0.3);
+}
+
+.code-block {
+  @apply overflow-x-auto rounded-md border border-gray-200 bg-gray-50 p-4 font-mono text-sm dark:border-gray-800 dark:bg-gray-900;
+}
+
+.code-sample {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid rgb(229 231 235);
+  background-color: #fff;
+}
+
+.dark .code-sample {
+  border-color: rgb(31 41 55);
+  background-color: #24292e;
+}
+
+.code-sample__filename {
+  border-bottom: 1px solid rgb(229 231 235);
+  padding: 0.5rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(107 114 128);
+}
+
+.dark .code-sample__filename {
+  border-bottom-color: rgb(31 41 55);
+  color: rgb(156 163 175);
+}
+
+.code-sample .shiki {
+  margin: 0;
+  padding: 1rem 0;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  background-color: transparent;
+}
+
+.code-sample .shiki,
+.code-sample .shiki span {
+  color: var(--shiki-light);
+}
+
+.dark .code-sample .shiki,
+.dark .code-sample .shiki span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+.code-sample .shiki code {
+  counter-reset: code-line;
+  display: grid;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.code-sample .shiki .line {
+  display: block;
+  min-height: 1.65em;
+  padding-right: 1.1rem;
+}
+
+.code-sample .shiki .line::before {
+  counter-increment: code-line;
+  content: counter(code-line);
+  display: inline-block;
+  width: 2.5rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: rgb(156 163 175);
+  user-select: none;
+}
+
+.dark .code-sample .shiki .line::before {
+  color: rgb(110 118 129);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
