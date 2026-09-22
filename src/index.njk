@@ -4,69 +4,91 @@ title: Let your AI ship with Shellui
 description: Give your agent Shellui with one command. Copy fetch https://shellui.ai and install skills, CLI, and the happy path.
 ---
 
+{% set agentPrompt = "fetch https://shellui.ai to start with Shellui" %}
+
 {# Agents read this block; humans see the page below. #}
 <div style="display:none" aria-hidden="true" data-agent-instructions="true">{% include "agent-instructions.txt" %}</div>
 
-<section class="relative px-4 pb-12 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8">
-  <div class="mx-auto max-w-3xl">
-    <p class="font-mono text-xs font-medium uppercase tracking-wider text-primary">shellui.ai</p>
-    <h1 class="mt-4 font-mono text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-      Let your AI ship with <span class="text-primary">Shellui</span>
+<div class="relative isolate page-x page-top">
+  <div class="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div
+      class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-30 bg-linear-to-tr from-primary to-amber-200 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:opacity-20"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+    ></div>
+  </div>
+
+  <div class="mx-auto max-w-3xl pb-12 sm:pb-16">
+    <p class="text-sm font-medium text-primary-ink dark:text-primary">Agent onboarding</p>
+    <h1 class="mt-4 text-4xl font-bold tracking-tight text-balance text-foreground sm:text-5xl">
+      Let your AI ship with <span class="text-primary-ink dark:text-primary">Shellui</span>
     </h1>
-    <p class="mt-6 max-w-xl font-mono text-base leading-relaxed text-gray-600 dark:text-gray-400">
+    <p class="mt-6 max-w-xl text-lg/7 text-muted-foreground">
       One instruction for your agent: install Shellui skills, get the CLI, scaffold a shell or framework starter, and start. Built for Shellui.
     </p>
   </div>
-</section>
+</div>
 
-<section class="relative px-4 pb-8 sm:px-6 lg:px-8">
+<section class="relative page-x pb-12 sm:pb-16">
   <div class="mx-auto max-w-3xl">
-    <h2 class="font-mono text-2xl font-medium tracking-tight text-gray-900 dark:text-white">Start shipping</h2>
-    <p class="mt-2 font-mono text-sm text-gray-600 dark:text-gray-400">Copy this instruction and give it to your agent</p>
-    <div class="mt-4 flex items-stretch overflow-hidden rounded-lg border border-gray-800 bg-gray-950 shadow-sm dark:border-gray-700">
+    <h2 class="text-2xl font-semibold tracking-tight text-foreground">Start shipping</h2>
+    <p class="mt-2 text-sm text-muted-foreground">Copy this instruction and give it to your agent.</p>
+    <div class="mt-4 flex flex-col overflow-hidden rounded-xl border border-border bg-card sm:flex-row sm:items-stretch">
+      <p class="min-w-0 flex-1 select-all overflow-x-auto px-4 py-3 font-mono text-sm text-foreground sm:py-2.5">{{ agentPrompt }}</p>
       <button
         type="button"
-        data-copy="fetch https://shellui.ai to start with Shellui"
-        class="m-1.5 inline-flex shrink-0 cursor-pointer items-center gap-2 rounded bg-white/10 px-3 py-1.5 font-mono text-sm text-white/80 transition-colors hover:bg-white/15 hover:text-white"
+        data-copy="{{ agentPrompt }}"
+        class="inline-flex min-h-11 shrink-0 cursor-pointer items-center justify-center gap-2 border-t border-border px-4 text-sm font-semibold text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:border-t-0 sm:border-l"
         aria-label="Copy agent prompt"
       >
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
         <span data-copy-label>Copy</span>
       </button>
-      <div class="flex-1 select-all overflow-x-auto px-3 py-2.5 font-mono text-sm whitespace-nowrap text-white/90">
-        fetch https://shellui.ai to start with Shellui
-      </div>
     </div>
-    <p class="mt-3 font-mono text-xs text-gray-500 dark:text-gray-500">
-      Agents should fetch this page and follow the embedded instructions (skills → CLI → init → start).
+    <p class="mt-3 text-xs text-muted-foreground">
+      Agents should fetch this page and follow the embedded instructions (skills, then CLI, then init, then start).
     </p>
   </div>
 </section>
 
-<section class="relative px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+<section class="relative page-x py-12 sm:py-16">
   <div class="mx-auto max-w-3xl">
-    <h2 class="font-mono text-2xl font-medium tracking-tight text-gray-900 dark:text-white">What your agent will do</h2>
-    <ol class="mt-8 space-y-6 font-mono text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-      <li><span class="font-medium text-gray-900 dark:text-white">1. Install skills</span> — <code class="text-primary">npx skills add shellui/skills --skill shellui</code></li>
-      <li><span class="font-medium text-gray-900 dark:text-white">2. Install CLI</span> — <code class="text-primary">npm install -g @shellui/cli</code></li>
-      <li><span class="font-medium text-gray-900 dark:text-white">3. Init</span> — empty shell or react / vue / angular, optional backend</li>
-      <li><span class="font-medium text-gray-900 dark:text-white">4. Start</span> — <code class="text-primary">shellui start</code> (shell + framework companion)</li>
+    <h2 class="text-2xl font-semibold tracking-tight text-foreground">What your agent will do</h2>
+    <ol class="mt-8 space-y-6 text-base/7 text-muted-foreground">
+      <li>
+        <span class="font-semibold text-foreground">1. Install skills.</span>
+        <code class="mt-1 block font-mono text-sm text-primary-ink dark:text-primary">npx skills add shellui/skills --skill shellui</code>
+      </li>
+      <li>
+        <span class="font-semibold text-foreground">2. Install CLI.</span>
+        <code class="mt-1 block font-mono text-sm text-primary-ink dark:text-primary">npm install -g @shellui/cli</code>
+      </li>
+      <li>
+        <span class="font-semibold text-foreground">3. Init.</span>
+        Empty shell or React, Vue, or Angular, with an optional backend.
+      </li>
+      <li>
+        <span class="font-semibold text-foreground">4. Start.</span>
+        <code class="mt-1 block font-mono text-sm text-primary-ink dark:text-primary">shellui start</code>
+        (shell and framework companion)
+      </li>
     </ol>
   </div>
 </section>
 
-<section class="relative px-4 pb-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8 dark:border-gray-800 dark:bg-gray-900/40">
-    <h2 class="font-mono text-lg font-medium text-gray-900 dark:text-white">Humans welcome too</h2>
-    <p class="mt-3 font-mono text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-      Prefer clicking around? Go to the
-      <a href="{{ site.website }}" class="text-primary underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">website</a>,
+<section class="relative page-x pb-20 sm:pb-24">
+  <div class="mx-auto max-w-3xl rounded-xl border border-border bg-muted p-6 sm:p-8">
+    <h2 class="text-lg font-semibold text-foreground">Humans welcome too</h2>
+    <p class="mt-3 text-base/7 text-muted-foreground">
+      Prefer clicking around? Visit
+      <a href="{{ site.hosting }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary" target="_blank" rel="noopener noreferrer">Shellui Hosting</a>
+      for temporary deploys, browse the
+      <a href="{{ site.website }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary" target="_blank" rel="noopener noreferrer">website</a>,
       read the
-      <a href="{{ site.docs }}" class="text-primary underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">docs</a>,
+      <a href="{{ site.docs }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary" target="_blank" rel="noopener noreferrer">docs</a>,
       or try the
-      <a href="{{ site.playground }}" class="text-primary underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">playground</a>.
+      <a href="{{ site.playground }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary" target="_blank" rel="noopener noreferrer">playground</a>.
     </p>
   </div>
 </section>

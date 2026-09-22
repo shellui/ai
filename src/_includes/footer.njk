@@ -1,19 +1,19 @@
-<footer class="relative z-10 border-t border-gray-200 bg-gray-50 px-4 py-10 sm:px-6 lg:px-8 dark:border-gray-800 dark:bg-gray-900/50">
+<footer class="relative z-10 border-t border-border bg-muted page-x py-10">
   <div class="mx-auto flex max-w-5xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
     <div>
-      <a href="/" class="inline-flex items-center gap-2" aria-label="shellui.ai">
+      <a href="/" class="inline-flex items-center text-foreground" aria-label="shellui.ai" translate="no">
         {% include "logo.njk" %}
-        <span class="font-mono text-sm"><span class="text-gray-900 dark:text-white">shellui</span><span class="text-gray-400">.ai</span></span>
       </a>
-      <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Agent onboarding for the Shellui platform.</p>
+      <p class="mt-2 text-sm text-muted-foreground">Agent onboarding for the Shellui platform.</p>
     </div>
-    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
-      <a href="{{ site.website }}" class="hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Website</a>
-      <a href="{{ site.docs }}" class="hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Docs</a>
-      <a href="{{ site.playground }}" class="hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Playground</a>
-      <a href="{{ site.github }}" class="hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="{{ site.skills }}" class="hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">Skills</a>
+    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+      <a href="{{ site.hosting }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Hosting</a>
+      <a href="{{ site.website }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="{{ site.docs }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Docs</a>
+      <a href="{{ site.playground }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Playground</a>
+      <a href="{{ site.github }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="{{ site.skills }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Skills</a>
     </nav>
   </div>
-  <p class="mx-auto mt-8 max-w-5xl text-xs text-gray-500 dark:text-gray-500">© 2026 Shellui</p>
+  <p class="mx-auto mt-8 max-w-5xl text-xs text-muted-foreground">© 2026 Shellui</p>
 </footer>
