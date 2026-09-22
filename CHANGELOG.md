@@ -23,4 +23,6 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 
 ## [0.1.0] - 2026-09-22
 
+### ✨ Feature
+
 - First shellui.ai landing: agent fetch bootstrap with hidden `data-agent-instructions`, copy prompt, and CLI/skills happy path.
