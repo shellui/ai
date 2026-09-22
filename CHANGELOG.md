@@ -26,7 +26,7 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 ### 🛠 Improvements
 
 - Align shellui.ai with the Shellui brand and shellui.com design tokens (gray canvas, honey gold primary, system typography).
-- Sync the wordmark SVG sprite with shellui.com brand assets; use the Shellui mark in nav and footer (same as shellui.com), with no domain text beside it.
+- Sync logo sprites with shellui.com brand assets: wordmark (`h-5 w-auto`) in the header, mark (`size-8.5`) in the footer; no domain text beside either.
 - Add Shellui Hosting links in nav, footer, and the humans band (`https://shellui.app`); order external links Website, Docs, Playground, GitHub, then Hosting last.
 - Restore soft primary hero ambient and token utilities (`bg-background`, `text-muted-foreground`, `border-border`, and related classes).
 
