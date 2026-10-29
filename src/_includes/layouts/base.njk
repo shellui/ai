@@ -29,6 +29,30 @@
         if (theme === "dark") document.documentElement.classList.add("dark");
       })();
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "{{ site.website }}/#organization",
+          "name": "{{ site.name }}",
+          "url": "{{ site.website }}",
+          "sameAs": ["{{ site.github }}", "{{ site.docs }}", "{{ site.url }}"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ site.url }}/#website",
+          "url": "{{ site.url }}",
+          "name": "shellui.ai",
+          "description": {{ site.description | dump | safe }},
+          "inLanguage": "{{ site.locale or 'en' }}",
+          "publisher": { "@id": "{{ site.website }}/#organization" },
+          "about": { "@id": "{{ site.website }}/#organization" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="flex min-h-full flex-col bg-background text-foreground antialiased">
     {% include "logo-sprite.njk" %}
