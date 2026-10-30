@@ -83,3 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+(function () {
+  const els = document.querySelectorAll(".scroll-fade");
+  function check(el) {
+    el.dataset.overflow = el.scrollWidth > el.clientWidth + 1 ? "true" : "false";
+    el.dataset.end = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1 ? "true" : "false";
+  }
+  els.forEach((el) => {
+    check(el);
+    el.addEventListener("scroll", () => check(el), { passive: true });
+  });
+  window.addEventListener("resize", () => els.forEach(check), { passive: true });
+})();

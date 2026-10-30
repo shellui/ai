@@ -452,13 +452,13 @@
   pointer-events: none;
   background-image: radial-gradient(var(--color-foreground) 1px, transparent 1.2px);
   background-size: 24px 24px;
-  opacity: 0.08;
-  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 18%, #000 0%, rgb(0 0 0 / 0.35) 55%, transparent 85%);
-  mask-image: radial-gradient(ellipse 70% 55% at 50% 18%, #000 0%, rgb(0 0 0 / 0.35) 55%, transparent 85%);
+  opacity: 0.12;
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 25%, #000 0%, #000 45%, rgb(0 0 0 / 0.35) 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 25%, #000 0%, #000 45%, rgb(0 0 0 / 0.35) 75%, transparent 100%);
   will-change: transform;
   animation: dots-drift 24s linear infinite;
 }
-.dark .dots::before { opacity: 0.12; }
+.dark .dots::before { opacity: 0.16; }
 @keyframes dots-drift {
   from { transform: translate(0, 0); }
   to { transform: translate(24px, 24px); }
@@ -469,3 +469,12 @@
 [data-copied] .copy-icon { display: none; }
 .check-icon { display: none; }
 [data-copied] .check-icon { display: inline; }
+
+/* Horizontal scroll with a right-edge fade when content overflows. */
+.scroll-fade { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.scroll-fade::-webkit-scrollbar { display: none; }
+.scroll-fade[data-overflow="true"] {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+}
+.scroll-fade[data-overflow="true"][data-end="true"] { -webkit-mask-image: none; mask-image: none; }

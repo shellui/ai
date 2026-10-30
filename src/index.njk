@@ -8,14 +8,14 @@ title: AI agents in your web shell
 {# Agents read this block; humans see the page below. #}
 <div style="display:none" aria-hidden="true" data-agent-instructions="true">{% include "agent-instructions.txt" %}</div>
 
-<section class="relative page-x page-top pb-16 sm:pb-24">
-  <div class="mx-auto max-w-[720px]">
+<section class="relative page-x page-top">
+  <div class="mx-auto max-w-[960px]"><div class="max-w-[720px]">
     <p class="text-sm font-semibold text-primary-ink">Coding agent setup</p>
-    <h1 class="mt-4 text-5xl font-semibold tracking-[-0.02em] text-balance text-foreground sm:text-6xl">AI agents in your web shell</h1>
+    <h1 class="mt-4 text-5xl font-semibold tracking-[-0.02em] text-foreground sm:text-6xl"><span class="whitespace-nowrap">AI agents</span> <span class="whitespace-nowrap">in your</span> <span class="whitespace-nowrap">web shell</span></h1>
     <p class="mt-6 text-base/7 sm:text-lg/8 text-pretty text-muted-foreground">Give your coding agent one prompt. It sets up and starts Shellui, <a href="{{ site.website }}" class="font-medium text-primary-ink underline underline-offset-2 decoration-primary-ink/30 hover:decoration-primary-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">the open-source shell for web apps</a>.</p>
 
     <div class="mt-10 overflow-hidden rounded-xl border-2 border-foreground/15 bg-card shadow-sm sm:flex sm:h-14 sm:items-stretch">
-      <p class="flex h-14 min-w-0 flex-1 items-center overflow-x-auto whitespace-nowrap px-4 font-mono text-base text-foreground select-all">{{ agentPrompt }}</p>
+      <p class="scroll-fade flex h-14 min-w-0 flex-1 items-center overflow-x-auto whitespace-nowrap px-4 font-mono text-base text-foreground select-all" tabindex="0" aria-label="Agent prompt">{{ agentPrompt }}</p>
       <button type="button" data-copy="{{ agentPrompt }}" class="flex h-12 w-full shrink-0 cursor-pointer items-center justify-center gap-2 bg-primary px-5 text-sm font-semibold text-primary-foreground hover:opacity-90 sm:h-auto sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy agent prompt">
         <svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg><span data-copy-label>Copy prompt</span>
       </button>
@@ -24,44 +24,44 @@ title: AI agents in your web shell
 
     <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
       <a href="{{ site.website }}" class="inline-flex h-11 items-center justify-center gap-1.5 rounded-md px-4 text-sm font-semibold text-foreground ring-1 ring-border ring-inset transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Visit the Shellui main site<svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.64l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg></a>
-      <a href="{{ site.docs }}" class="inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Read the docs</a>
+      <a href="{{ site.docs }}" class="inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-semibold text-foreground ring-1 ring-border ring-inset transition-colors hover:bg-muted sm:text-muted-foreground sm:ring-0 sm:hover:bg-transparent sm:hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Read the docs</a>
     </div>
-  </div>
+  </div></div>
 </section>
 
-<section class="relative page-x py-16 sm:py-24">
+<section class="relative page-x pt-16 sm:pt-24">
   <div class="mx-auto max-w-[960px]">
     <h2 class="text-[32px]/10 font-semibold tracking-tight text-foreground">What your agent does</h2>
     <ol class="mt-6 grid gap-4 sm:grid-cols-2">
-      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+      <li class="flex min-w-0 flex-col rounded-xl border border-border bg-card p-4 sm:p-5">
         <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">1.</span> Install the skills</h3>
         <p class="mt-2 text-[15px]/6 text-muted-foreground">Adds the Shellui skill so your agent knows the CLI, the config and the conventions.</p>
         <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
-          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">npx skills add shellui/skills --skill shellui</code>
+          <code class="scroll-fade min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-[13px] text-foreground" tabindex="0">npx skills add shellui/skills --skill shellui</code>
           <button type="button" data-copy="npx skills add shellui/skills --skill shellui" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: npx skills add shellui/skills --skill shellui"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
         </div>
       </li>
-      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+      <li class="flex min-w-0 flex-col rounded-xl border border-border bg-card p-4 sm:p-5">
         <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">2.</span> Install the CLI</h3>
-        <p class="mt-2 text-[15px]/6 text-muted-foreground">Makes the shellui command available. Your agent checks it with shellui --help.</p>
+        <p class="mt-2 text-[15px]/6 text-muted-foreground">Makes the shellui command available. Your agent checks it with <code class="font-mono text-sm text-foreground">shellui --help</code>.</p>
         <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
-          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">npm install -g @shellui/cli</code>
+          <code class="scroll-fade min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-[13px] text-foreground" tabindex="0">npm install -g @shellui/cli</code>
           <button type="button" data-copy="npm install -g @shellui/cli" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: npm install -g @shellui/cli"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
         </div>
       </li>
-      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+      <li class="flex min-w-0 flex-col rounded-xl border border-border bg-card p-4 sm:p-5">
         <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">3.</span> Scaffold the project</h3>
         <p class="mt-2 text-[15px]/6 text-muted-foreground">An empty shell or a React, Vue or Angular starter, with no backend, Shellui or Supabase.</p>
         <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
-          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">shellui init --framework vue --backend none</code>
+          <code class="scroll-fade min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-[13px] text-foreground" tabindex="0">shellui init --framework vue --backend none</code>
           <button type="button" data-copy="shellui init --framework vue --backend none" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: shellui init --framework vue --backend none"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
         </div>
       </li>
-      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+      <li class="flex min-w-0 flex-col rounded-xl border border-border bg-card p-4 sm:p-5">
         <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">4.</span> Start the shell</h3>
         <p class="mt-2 text-[15px]/6 text-muted-foreground">Runs the shell and the framework app side by side, with your app inside the shell.</p>
         <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
-          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">shellui start</code>
+          <code class="scroll-fade min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-[13px] text-foreground" tabindex="0">shellui start</code>
           <button type="button" data-copy="shellui start" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: shellui start"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
         </div>
       </li>
@@ -69,7 +69,7 @@ title: AI agents in your web shell
   </div>
 </section>
 
-<section class="relative page-x py-16 sm:py-24">
+<section class="relative page-x pt-16 sm:pt-24">
   <div class="mx-auto max-w-[960px]">
     <h2 class="text-[32px]/10 font-semibold tracking-tight text-foreground">Made for agents to read</h2>
     <p class="mt-6 max-w-[720px] text-base/7 text-muted-foreground">The project publishes its knowledge in formats an agent can fetch and follow.</p>
@@ -94,7 +94,7 @@ title: AI agents in your web shell
   </div>
 </section>
 
-<section class="relative page-x pt-0 pb-16 sm:pb-24">
+<section class="relative page-x py-16 sm:py-24">
   <div class="mx-auto max-w-[960px]">
     <h2 class="text-[32px]/10 font-semibold tracking-tight text-foreground">Keep exploring</h2>
     <div class="mt-6 grid gap-4 sm:grid-cols-3">
