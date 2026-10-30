@@ -99,8 +99,6 @@ export default function (eleventyConfig) {
     "favicon.ico": "favicon.ico",
     "apple-touch-icon.png": "apple-touch-icon.png",
     "src/assets/js": "assets/js",
-    "node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.min.js",
-    "node_modules/@tailwindplus/elements/dist/index.js": "assets/js/elements.js",
   });
 
   eleventyConfig.addFilter("absoluteUrl", (url, base) => {

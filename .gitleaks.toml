@@ -1,0 +1,10 @@
+title = "shellui.ai"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Public IndexNow key. It is served at /<key>.txt by design, not a credential."
+condition = "AND"
+paths = ['''src/_data/site\.json''']
+regexes = ['''"indexNowKey": "[a-f0-9]{32}"''']

@@ -3,7 +3,7 @@
   "url": "https://shellui.ai",
   "website": "https://shellui.com",
   "hosting": "https://shellui.app",
-  "description": "Give your AI agent Shellui: fetch https://shellui.ai to install skills and start shipping.",
+  "description": "Give your coding agent one prompt to set up Shellui, the open-source shell for web apps: Shellui skills, the CLI, a starter project and a running shell.",
   "author": "Shellui",
   "docs": "https://docs.shellui.com",
   "playground": "https://playground.shellui.com",
@@ -12,5 +12,6 @@
   "twitter": "https://x.com/shelluihq",
   "linkedin": "https://www.linkedin.com/company/shellui",
   "docker": "https://hub.docker.com/u/shellui",
-  "locale": "en"
+  "locale": "en",
+  "indexNowKey": "37960ae639b25d41db9147354b31ea33"
 }

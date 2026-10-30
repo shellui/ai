@@ -1,26 +1,17 @@
 <header class="fixed inset-x-0 top-0 z-50">
-  <div class="relative z-50 border-b border-border/50 bg-background/80 backdrop-blur-md page-x dark:border-border/50">
+  <div class="border-b border-border/60 bg-background/80 backdrop-blur-md page-x">
     <nav class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4" aria-label="Global">
-      <a href="/" class="inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="shellui.ai" translate="no">
+      <a href="/" class="inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Shellui for AI home" translate="no">
         {% include "logo-mark.njk" %}
+        <span class="text-sm font-semibold text-foreground">Shellui <span class="text-primary-ink dark:text-primary">for AI</span></span>
       </a>
-      <div class="flex items-center gap-3 sm:gap-5">
-        <a href="{{ site.website }}" class="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:inline" target="_blank" rel="noopener noreferrer">shellui.com</a>
-        <a href="{{ site.docs }}" class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground" target="_blank" rel="noopener noreferrer">Docs</a>
-        <a href="{{ site.playground }}" class="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground md:inline" target="_blank" rel="noopener noreferrer">Playground</a>
-        <a href="{{ site.github }}" class="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:inline" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="{{ site.hosting }}" class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground" target="_blank" rel="noopener noreferrer">Hosting</a>
-        <button
-          type="button"
-          class="theme-toggle inline-flex size-11 items-center justify-center rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          aria-label="Toggle dark mode"
-        >
-          <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
+      <div class="flex items-center gap-4 sm:gap-6">
+        <a href="{{ site.docs }}" class="hidden sm:inline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Docs</a>
+        <a href="{{ site.skills }}" class="hidden text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:inline">Skills</a>
+        <a href="{{ site.website }}" class="inline-flex min-h-11 items-center rounded-md px-3 text-sm font-semibold text-foreground ring-1 ring-border ring-inset transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui main site</a>
+        <button type="button" class="theme-toggle inline-flex size-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Toggle dark mode">
+          <svg class="h-5 w-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+          <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
         </button>
       </div>
     </nav>

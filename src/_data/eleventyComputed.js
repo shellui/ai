@@ -1,6 +1,8 @@
 export default {
   metaTitle: (data) =>
-    data.title ? `${data.title} · shellui.ai` : "shellui.ai: Let your AI ship with Shellui",
+    data.page?.url === "/" || !data.title
+      ? "AI agents in your web shell, by Shellui"
+      : `${data.title} · Shellui for AI`,
   metaDescription: (data) => data.description || data.site.description,
   canonical: (data) => {
     const path = data.page?.url || "/";

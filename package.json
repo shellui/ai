@@ -1,7 +1,7 @@
 {
   "name": "shellui-ai",
-  "version": "0.1.0",
-  "description": "shellui.ai — agent onboarding for Shellui (fetch bootstrap for coding agents).",
+  "version": "0.2.0",
+  "description": "Shellui for AI: agent onboarding for Shellui, the open-source shell for web apps.",
   "private": true,
   "type": "module",
   "scripts": {

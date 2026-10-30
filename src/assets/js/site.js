@@ -82,3 +82,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/* Subtle moving dots. Static under reduced motion, paused when the tab is hidden. */
+(function () {
+  const canvas = document.getElementById("dots");
+  if (!canvas || !canvas.getContext) return;
+  const ctx = canvas.getContext("2d");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const GAP = 28;
+  let w = 0, h = 0, dpr = 1, raf = 0, t = 0;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = getComputedStyle(canvas).color;
+    for (let y = GAP / 2; y < h; y += GAP) {
+      for (let x = GAP / 2; x < w; x += GAP) {
+        const wave = Math.sin(x * 0.012 + t) * Math.cos(y * 0.016 - t * 0.8);
+        ctx.globalAlpha = 0.15 + 0.35 * (wave + 1) / 2;
+        ctx.beginPath();
+        ctx.arc(x, y + wave * 2, 1.1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  function loop() {
+    t += 0.006;
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+
+  function update() {
+    cancelAnimationFrame(raf);
+    raf = 0;
+    if (reduce.matches || document.hidden) draw();
+    else raf = requestAnimationFrame(loop);
+  }
+
+  window.addEventListener("resize", resize, { passive: true });
+  document.addEventListener("visibilitychange", update);
+  reduce.addEventListener("change", update);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  resize();
+  update();
+})();

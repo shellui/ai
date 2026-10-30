@@ -1,19 +1,17 @@
 <footer class="relative z-10 border-t border-border bg-muted page-x py-10">
-  <div class="mx-auto flex max-w-5xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-    <div>
-      <a href="/" class="inline-flex items-center" aria-label="shellui.ai" translate="no">
-        {% include "logo.njk" %}
-      </a>
-      <p class="mt-2 text-sm text-muted-foreground">Agent onboarding for the Shellui platform.</p>
+  <div class="mx-auto flex max-w-5xl flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+    <div class="max-w-sm">
+      <a href="{{ site.website }}" class="inline-flex items-center" aria-label="Shellui main site" translate="no">{% include "logo.njk" %}</a>
+      <p class="mt-3 text-sm text-muted-foreground">Shellui for AI is the agent entry point of <a href="{{ site.website }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui, the open-source shell for web apps</a>.</p>
     </div>
-    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-      <a href="{{ site.website }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">shellui.com (main site)</a>
-      <a href="{{ site.docs }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Docs</a>
-      <a href="{{ site.playground }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Playground</a>
-      <a href="{{ site.github }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="{{ site.hosting }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Hosting</a>
-      <a href="{{ site.skills }}" class="hover:text-foreground" target="_blank" rel="noopener noreferrer">Skills</a>
+    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground" aria-label="Footer">
+      <a href="{{ site.website }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui main site</a>
+      <a href="{{ site.docs }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui docs</a>
+      <a href="{{ site.playground }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Playground</a>
+      <a href="{{ site.skills }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Skills</a>
+      <a href="{{ site.github }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">GitHub</a>
+      <a href="{{ site.hosting }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Hosting</a>
     </nav>
   </div>
-  <p class="mx-auto mt-8 max-w-5xl text-xs text-muted-foreground">© 2026 Shellui</p>
+  <p class="mx-auto mt-8 max-w-5xl text-xs text-muted-foreground">© 2026 Shellui. MIT licensed.</p>
 </footer>
