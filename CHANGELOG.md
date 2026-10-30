@@ -29,9 +29,9 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 
 ### 🛠 Improvements
 
-- AI-first title, heading and description: AI agents in your web shell, by Shellui.
+- Agent-first title, heading and description: AI agents in your web shell.
 - New header and footer with clear links to the Shellui main site and docs.
-- Refreshed page with subtle moving dots, static under reduced motion.
+- Refreshed page: prompt-first hero, step cards with copy buttons, link cards, CSS-only dots background, inlined CSS.
 - JSON-LD describes Shellui on shellui.com, with no separate Organization.
 - Includes the PR #5 changes: shellui.com linked as the main site.
 

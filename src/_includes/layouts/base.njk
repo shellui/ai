@@ -11,7 +11,7 @@
     <meta property="og:title" content="{{ metaTitle }}" />
     <meta property="og:description" content="{{ metaDescription }}" />
     <meta property="og:url" content="{{ canonical }}" />
-    <meta property="og:site_name" content="Shellui for AI" />
+    <meta property="og:site_name" content="shellui.ai" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ metaTitle }}" />
     <meta name="twitter:description" content="{{ metaDescription }}" />
@@ -40,7 +40,7 @@
           "name": {{ metaTitle | dump | safe }},
           "description": {{ metaDescription | dump | safe }},
           "inLanguage": "{{ site.locale or 'en' }}",
-          "about": { "@id": "{{ site.website }}/#software" },
+          "about": { "@id": "{{ site.website }}/#software", "sameAs": "{{ site.website }}" },
           "publisher": { "@id": "{{ site.website }}/#organization" }
         },
         {
@@ -58,9 +58,8 @@
     }
     </script>
   </head>
-  <body class="flex min-h-full flex-col bg-background text-foreground antialiased">
+  <body class="dots flex min-h-full flex-col bg-background text-base text-foreground antialiased">
     {% include "logo-sprite.njk" %}
-    <canvas id="dots" class="dots-bg" aria-hidden="true"></canvas>
     {% include "nav.njk" %}
     <main class="relative z-10 flex-1">
       {{ content | safe }}

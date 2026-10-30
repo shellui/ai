@@ -3,7 +3,7 @@
   "url": "https://shellui.ai",
   "website": "https://shellui.com",
   "hosting": "https://shellui.app",
-  "description": "Give your coding agent one prompt to set up Shellui, the open-source shell for web apps: Shellui skills, the CLI, a starter project and a running shell.",
+  "description": "Set up your coding agent in one prompt: it installs the skills and CLI, scaffolds a project and starts Shellui, the open-source shell for web apps.",
   "author": "Shellui",
   "docs": "https://docs.shellui.com",
   "playground": "https://playground.shellui.com",

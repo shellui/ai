@@ -1,17 +1,31 @@
-<footer class="relative z-10 border-t border-border bg-muted page-x py-10">
-  <div class="mx-auto flex max-w-5xl flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-    <div class="max-w-sm">
-      <a href="{{ site.website }}" class="inline-flex items-center" aria-label="Shellui main site" translate="no">{% include "logo.njk" %}</a>
-      <p class="mt-3 text-sm text-muted-foreground">Shellui for AI is the agent entry point of <a href="{{ site.website }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui, the open-source shell for web apps</a>.</p>
+<footer class="relative z-10 border-t border-border bg-muted page-x py-12">
+  <div class="mx-auto grid max-w-5xl gap-10 sm:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <div class="max-w-xs">
+      <a href="{{ site.website }}" class="inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Shellui main site" translate="no">{% include "logo.njk" %}</a>
+      <p class="mt-3 text-sm text-muted-foreground">The agent entry point for Shellui, the open-source shell for web apps.</p>
     </div>
-    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground" aria-label="Footer">
-      <a href="{{ site.website }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui main site</a>
-      <a href="{{ site.docs }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui docs</a>
-      <a href="{{ site.playground }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Playground</a>
-      <a href="{{ site.skills }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Skills</a>
-      <a href="{{ site.github }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">GitHub</a>
-      <a href="{{ site.hosting }}" class="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Hosting</a>
-    </nav>
+      <div>
+        <h2 class="text-sm font-semibold text-foreground">Shellui</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="{{ site.website }}" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Main site</a></li>
+          <li><a href="{{ site.docs }}" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Docs</a></li>
+          <li><a href="{{ site.playground }}" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Playground</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-foreground">For agents</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="{{ site.skills }}" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Skills</a></li>
+          <li><a href="{{ site.docs }}/llms.txt" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">llms.txt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-foreground">Source</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="{{ site.github }}" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">GitHub</a></li>
+          <li><a href="{{ site.github }}/shellui/blob/main/LICENSE" class="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">MIT license</a></li>
+        </ul>
+      </div>
   </div>
-  <p class="mx-auto mt-8 max-w-5xl text-xs text-muted-foreground">© 2026 Shellui. MIT licensed.</p>
+  <p class="mx-auto mt-10 max-w-5xl text-sm text-muted-foreground">© 2026 Shellui</p>
 </footer>

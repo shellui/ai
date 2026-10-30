@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
-title: AI agents in your web shell, by Shellui
-description: "Give your coding agent one prompt to set up Shellui, the open-source shell for web apps: Shellui skills, the CLI, a starter project and a running shell."
+title: AI agents in your web shell
 ---
 
 {% set agentPrompt = "fetch https://shellui.ai to start with Shellui" %}
@@ -9,91 +8,108 @@ description: "Give your coding agent one prompt to set up Shellui, the open-sour
 {# Agents read this block; humans see the page below. #}
 <div style="display:none" aria-hidden="true" data-agent-instructions="true">{% include "agent-instructions.txt" %}</div>
 
-<section class="relative page-x page-top pb-14 sm:pb-20">
-  <div class="mx-auto max-w-3xl">
-    <p class="inline-flex items-center gap-2 rounded-full bg-background/80 px-3 py-1 text-sm font-medium text-primary-ink ring-1 ring-border ring-inset dark:text-primary">Shellui for AI</p>
-    <h1 class="mt-6 text-4xl font-semibold tracking-tight text-balance text-foreground sm:text-6xl">AI agents in your web shell, by Shellui</h1>
-    <p class="mt-6 max-w-2xl text-lg/8 text-pretty text-muted-foreground">
-      Hand one prompt to your coding agent. It installs the Shellui skills and CLI, scaffolds a project and starts
-      <a href="{{ site.website }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">the open-source shell for web apps</a>, with navigation, sign-in, admin and storage already in place.
-    </p>
+<section class="relative page-x page-top pb-16 sm:pb-24">
+  <div class="mx-auto max-w-[720px]">
+    <p class="text-sm font-semibold text-primary-ink">Coding agent setup</p>
+    <h1 class="mt-4 text-5xl font-semibold tracking-[-0.02em] text-balance text-foreground sm:text-6xl">AI agents in your web shell</h1>
+    <p class="mt-6 text-base/7 sm:text-lg/8 text-pretty text-muted-foreground">Give your coding agent one prompt. It sets up and starts Shellui, <a href="{{ site.website }}" class="font-medium text-primary-ink underline underline-offset-2 decoration-primary-ink/30 hover:decoration-primary-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">the open-source shell for web apps</a>.</p>
 
-    <div class="mt-10 flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-xs sm:flex-row sm:items-stretch">
-      <p class="min-w-0 flex-1 select-all overflow-x-auto px-4 py-3 font-mono text-sm text-foreground">{{ agentPrompt }}</p>
-      <button type="button" data-copy="{{ agentPrompt }}" class="inline-flex min-h-11 shrink-0 cursor-pointer items-center justify-center gap-2 border-t border-border px-4 text-sm font-semibold text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:border-t-0 sm:border-l" aria-label="Copy agent prompt">
-        <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-        <span data-copy-label>Copy</span>
+    <div class="mt-10 overflow-hidden rounded-xl border-2 border-foreground/15 bg-card shadow-sm sm:flex sm:h-14 sm:items-stretch">
+      <p class="flex h-14 min-w-0 flex-1 items-center overflow-x-auto whitespace-nowrap px-4 font-mono text-base text-foreground select-all">{{ agentPrompt }}</p>
+      <button type="button" data-copy="{{ agentPrompt }}" class="flex h-12 w-full shrink-0 cursor-pointer items-center justify-center gap-2 bg-primary px-5 text-sm font-semibold text-primary-foreground hover:opacity-90 sm:h-auto sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy agent prompt">
+        <svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg><span data-copy-label>Copy prompt</span>
       </button>
     </div>
     <p class="mt-3 text-sm text-muted-foreground">Works with any agent that can fetch a URL and run shell commands.</p>
 
-    <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-      <a href="{{ site.website }}" class="rounded-md bg-primary px-3.5 py-2.5 font-semibold text-primary-foreground shadow-xs hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Visit the Shellui main site</a>
-      <a href="{{ site.docs }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui docs</a>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <a href="{{ site.website }}" class="inline-flex h-11 items-center justify-center gap-1.5 rounded-md px-4 text-sm font-semibold text-foreground ring-1 ring-border ring-inset transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Visit the Shellui main site<svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.64l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg></a>
+      <a href="{{ site.docs }}" class="inline-flex h-11 items-center justify-center rounded-md px-4 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Read the docs</a>
     </div>
   </div>
 </section>
 
-<section class="relative page-x py-14 sm:py-20">
-  <div class="mx-auto max-w-3xl">
-    <h2 class="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">What your agent does</h2>
-    <ol class="mt-8 grid gap-4 sm:grid-cols-2">
-      <li class="rounded-xl border border-border bg-card/90 p-5">
-        <p class="text-sm font-semibold text-foreground"><span class="text-primary-ink dark:text-primary">1.</span> Install the Shellui skills</p>
-        <code class="mt-3 block overflow-x-auto font-mono text-xs text-muted-foreground">npx skills add shellui/skills --skill shellui</code>
+<section class="relative page-x py-16 sm:py-24">
+  <div class="mx-auto max-w-[960px]">
+    <h2 class="text-[32px]/10 font-semibold tracking-tight text-foreground">What your agent does</h2>
+    <ol class="mt-6 grid gap-4 sm:grid-cols-2">
+      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+        <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">1.</span> Install the skills</h3>
+        <p class="mt-2 text-[15px]/6 text-muted-foreground">Adds the Shellui skill so your agent knows the CLI, the config and the conventions.</p>
+        <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
+          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">npx skills add shellui/skills --skill shellui</code>
+          <button type="button" data-copy="npx skills add shellui/skills --skill shellui" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: npx skills add shellui/skills --skill shellui"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
+        </div>
       </li>
-      <li class="rounded-xl border border-border bg-card/90 p-5">
-        <p class="text-sm font-semibold text-foreground"><span class="text-primary-ink dark:text-primary">2.</span> Install the CLI</p>
-        <code class="mt-3 block overflow-x-auto font-mono text-xs text-muted-foreground">npm install -g @shellui/cli</code>
+      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+        <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">2.</span> Install the CLI</h3>
+        <p class="mt-2 text-[15px]/6 text-muted-foreground">Makes the shellui command available. Your agent checks it with shellui --help.</p>
+        <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
+          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">npm install -g @shellui/cli</code>
+          <button type="button" data-copy="npm install -g @shellui/cli" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: npm install -g @shellui/cli"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
+        </div>
       </li>
-      <li class="rounded-xl border border-border bg-card/90 p-5">
-        <p class="text-sm font-semibold text-foreground"><span class="text-primary-ink dark:text-primary">3.</span> Scaffold the project</p>
-        <code class="mt-3 block overflow-x-auto font-mono text-xs text-muted-foreground">shellui init --framework vue --backend none</code>
-        <p class="mt-2 text-xs text-muted-foreground">An empty shell or a React, Vue or Angular starter, with no backend, Shellui or Supabase.</p>
+      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+        <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">3.</span> Scaffold the project</h3>
+        <p class="mt-2 text-[15px]/6 text-muted-foreground">An empty shell or a React, Vue or Angular starter, with no backend, Shellui or Supabase.</p>
+        <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
+          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">shellui init --framework vue --backend none</code>
+          <button type="button" data-copy="shellui init --framework vue --backend none" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: shellui init --framework vue --backend none"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
+        </div>
       </li>
-      <li class="rounded-xl border border-border bg-card/90 p-5">
-        <p class="text-sm font-semibold text-foreground"><span class="text-primary-ink dark:text-primary">4.</span> Start the shell</p>
-        <code class="mt-3 block overflow-x-auto font-mono text-xs text-muted-foreground">shellui start</code>
-        <p class="mt-2 text-xs text-muted-foreground">Runs the shell and the framework app side by side, with your app inside the shell.</p>
+      <li class="flex flex-col rounded-xl border border-border bg-card p-4 sm:p-6">
+        <h3 class="text-base font-semibold text-foreground"><span class="text-primary-ink">4.</span> Start the shell</h3>
+        <p class="mt-2 text-[15px]/6 text-muted-foreground">Runs the shell and the framework app side by side, with your app inside the shell.</p>
+        <div class="mt-4 flex items-center overflow-hidden rounded-md border border-border bg-muted">
+          <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-sm text-foreground">shellui start</code>
+          <button type="button" data-copy="shellui start" class="inline-flex size-10 shrink-0 cursor-pointer items-center justify-center border-l border-border text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-label="Copy command: shellui start"><svg class="copy-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg><svg class="check-icon size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></button>
+        </div>
       </li>
     </ol>
   </div>
 </section>
 
-<section class="relative page-x py-14 sm:py-20">
-  <div class="mx-auto max-w-3xl">
-    <h2 class="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">Made for agents to read</h2>
-    <p class="mt-3 text-base/7 text-muted-foreground">Shellui publishes its knowledge in formats an agent can fetch and follow.</p>
-    <dl class="mt-8 grid gap-4 sm:grid-cols-2">
-      <div class="rounded-xl border border-border bg-card/90 p-5">
-        <dt class="text-sm font-semibold text-foreground">Agent skills</dt>
-        <dd class="mt-2 text-sm/6 text-muted-foreground">The <a href="{{ site.skills }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui skills repository</a> teaches your agent the CLI, the config and the happy path.</dd>
+<section class="relative page-x py-16 sm:py-24">
+  <div class="mx-auto max-w-[960px]">
+    <h2 class="text-[32px]/10 font-semibold tracking-tight text-foreground">Made for agents to read</h2>
+    <p class="mt-6 max-w-[720px] text-base/7 text-muted-foreground">The project publishes its knowledge in formats an agent can fetch and follow.</p>
+    <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-xl border border-border bg-card p-4 sm:p-6">
+        <dt class="text-base font-semibold text-foreground">Agent skills</dt>
+        <dd class="mt-2 text-[15px]/6 text-muted-foreground">The <a href="{{ site.skills }}" class="font-medium text-primary-ink underline underline-offset-2 decoration-primary-ink/30 hover:decoration-primary-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui skills repository</a> teaches your agent the happy path, from init to deploy.</dd>
       </div>
-      <div class="rounded-xl border border-border bg-card/90 p-5">
-        <dt class="text-sm font-semibold text-foreground">llms.txt docs map</dt>
-        <dd class="mt-2 text-sm/6 text-muted-foreground">Point your agent at the <a href="{{ site.docs }}/llms.txt" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui docs llms.txt</a> for a map of every guide.</dd>
+      <div class="rounded-xl border border-border bg-card p-4 sm:p-6">
+        <dt class="text-base font-semibold text-foreground">llms.txt docs map</dt>
+        <dd class="mt-2 text-[15px]/6 text-muted-foreground">Point your agent at the <a href="{{ site.docs }}/llms.txt" class="font-medium text-primary-ink underline underline-offset-2 decoration-primary-ink/30 hover:decoration-primary-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Shellui docs map</a> to find every guide.</dd>
       </div>
-      <div class="rounded-xl border border-border bg-card/90 p-5">
-        <dt class="text-sm font-semibold text-foreground">Guidelines in Markdown</dt>
-        <dd class="mt-2 text-sm/6 text-muted-foreground">The <a href="{{ site.website }}/guidelines/writing.md" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">writing guidelines</a> and <a href="{{ site.website }}/design.md" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">design notes</a> come as plain Markdown, so generated copy and UI match the Shellui style.</dd>
+      <div class="rounded-xl border border-border bg-card p-4 sm:p-6">
+        <dt class="text-base font-semibold text-foreground">Guidelines in Markdown</dt>
+        <dd class="mt-2 text-[15px]/6 text-muted-foreground">Writing and design guidelines ship as plain Markdown, so generated copy and UI follow the house style.</dd>
       </div>
-      <div class="rounded-xl border border-border bg-card/90 p-5">
-        <dt class="text-sm font-semibold text-foreground">One prompt, everywhere</dt>
-        <dd class="mt-2 text-sm/6 text-muted-foreground">The same prompt sits on the <a href="{{ site.website }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui homepage</a>. This page holds the instructions it fetches.</dd>
+      <div class="rounded-xl border border-border bg-card p-4 sm:p-6">
+        <dt class="text-base font-semibold text-foreground">One prompt, everywhere</dt>
+        <dd class="mt-2 text-[15px]/6 text-muted-foreground">The same prompt sits on the main site homepage. This page holds the instructions it fetches.</dd>
       </div>
     </dl>
   </div>
 </section>
 
-<section class="relative page-x pt-6 pb-20 sm:pb-24">
-  <div class="mx-auto max-w-3xl rounded-xl border border-border bg-muted p-6 sm:p-8">
-    <h2 class="text-lg font-semibold text-foreground">Prefer to read it yourself?</h2>
-    <p class="mt-3 text-base/7 text-muted-foreground">
-      Start on <a href="{{ site.website }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">shellui.com, the home of the Shellui project</a>, read the
-      <a href="{{ site.docs }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui docs</a>, try the
-      <a href="{{ site.playground }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui playground</a>, browse the
-      <a href="{{ site.github }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">source on GitHub</a>, or share a 7-day preview with
-      <a href="{{ site.hosting }}" class="font-medium text-primary-ink underline-offset-2 hover:underline dark:text-primary">Shellui Hosting</a>.
-    </p>
+<section class="relative page-x pt-0 pb-16 sm:pb-24">
+  <div class="mx-auto max-w-[960px]">
+    <h2 class="text-[32px]/10 font-semibold tracking-tight text-foreground">Keep exploring</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-3">
+      <a href="{{ site.docs }}" class="group rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary-ink sm:p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+        <span class="flex items-center justify-between text-base font-semibold text-foreground">Docs<span class="text-muted-foreground group-hover:text-primary-ink"><svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.64l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg></span></span>
+        <span class="mt-2 block text-[15px]/6 text-muted-foreground">Guides for the shell, the SDK, sign-in, storage and the CLI.</span>
+      </a>
+      <a href="{{ site.playground }}" class="group rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary-ink sm:p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+        <span class="flex items-center justify-between text-base font-semibold text-foreground">Playground<span class="text-muted-foreground group-hover:text-primary-ink"><svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.64l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg></span></span>
+        <span class="mt-2 block text-[15px]/6 text-muted-foreground">Try a running shell in your browser, with sample apps.</span>
+      </a>
+      <a href="{{ site.github }}" class="group rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary-ink sm:p-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+        <span class="flex items-center justify-between text-base font-semibold text-foreground">GitHub<span class="text-muted-foreground group-hover:text-primary-ink"><svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.64l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg></span></span>
+        <span class="mt-2 block text-[15px]/6 text-muted-foreground">Source, issues and releases. MIT licensed.</span>
+      </a>
+    </div>
   </div>
 </section>

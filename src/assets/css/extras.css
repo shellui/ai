@@ -43,7 +43,7 @@
 }
 
 .page-top {
-  @apply pt-20 md:pt-24 lg:pt-32;
+  @apply pt-28 md:pt-32 lg:pt-40;
 }
 
 [x-cloak] {
@@ -443,17 +443,29 @@
   }
 }
 
-/* Background dots. Colour follows the theme; motion handled in site.js. */
-.dots-bg {
+/* Background dots: CSS only, fixed, never affects layout. */
+.dots::before {
+  content: "";
   position: fixed;
-  inset: 0;
+  inset: -24px;
   z-index: 0;
-  width: 100%;
-  height: 100%;
   pointer-events: none;
-  color: var(--color-primary);
-  opacity: 0.55;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 20%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse at 50% 20%, #000 0%, transparent 75%);
+  background-image: radial-gradient(var(--color-foreground) 1px, transparent 1.2px);
+  background-size: 24px 24px;
+  opacity: 0.08;
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 18%, #000 0%, rgb(0 0 0 / 0.35) 55%, transparent 85%);
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 18%, #000 0%, rgb(0 0 0 / 0.35) 55%, transparent 85%);
+  will-change: transform;
+  animation: dots-drift 24s linear infinite;
 }
-.dark .dots-bg { opacity: 0.45; }
+.dark .dots::before { opacity: 0.12; }
+@keyframes dots-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(24px, 24px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dots::before { animation: none; }
+}
+[data-copied] .copy-icon { display: none; }
+.check-icon { display: none; }
+[data-copied] .check-icon { display: inline; }
