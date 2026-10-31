@@ -68,17 +68,31 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = btn.getAttribute("data-copy") || "";
       try {
         await navigator.clipboard.writeText(text);
+        btn.dataset.copied = "true";
         const label = btn.querySelector("[data-copy-label]");
-        if (label) {
-          const prev = label.textContent;
-          label.textContent = "Copied";
-          setTimeout(() => {
-            label.textContent = prev;
-          }, 1600);
-        }
+        const prev = label ? label.textContent : "";
+        if (label) label.textContent = "Copied";
+        setTimeout(() => {
+          delete btn.dataset.copied;
+          if (label) label.textContent = prev;
+        }, 1600);
       } catch {
         /* ignore */
       }
     });
   });
 });
+
+
+(function () {
+  const els = document.querySelectorAll(".scroll-fade");
+  function check(el) {
+    el.dataset.overflow = el.scrollWidth > el.clientWidth + 1 ? "true" : "false";
+    el.dataset.end = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1 ? "true" : "false";
+  }
+  els.forEach((el) => {
+    check(el);
+    el.addEventListener("scroll", () => check(el), { passive: true });
+  });
+  window.addEventListener("resize", () => els.forEach(check), { passive: true });
+})();

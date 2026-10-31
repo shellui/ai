@@ -21,6 +21,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [0.2.0] - 2026-10-30
+
+### ✨ Feature
+
+- Sitemap, robots.txt pointing to it, and an IndexNow ping after each deploy.
+
+### 🛠 Improvements
+
+- Agent-first title, heading and description: AI agents in your web shell.
+- New header and footer with clear links to the Shellui main site and docs.
+- Refreshed page: prompt-first hero, step cards with copy buttons, link cards, CSS-only dots background, inlined CSS.
+- JSON-LD describes Shellui on shellui.com, with no separate Organization.
+- Includes the PR #5 changes: shellui.com linked as the main site.
+
 ## [0.1.0] - 2026-09-22
 
 ### ✨ Feature

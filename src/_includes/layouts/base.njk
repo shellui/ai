@@ -29,16 +29,42 @@
         if (theme === "dark") document.documentElement.classList.add("dark");
       })();
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "{{ canonical }}#webpage",
+          "url": "{{ canonical }}",
+          "name": {{ metaTitle | dump | safe }},
+          "description": {{ metaDescription | dump | safe }},
+          "inLanguage": "{{ site.locale or 'en' }}",
+          "about": { "@id": "{{ site.website }}/#software", "sameAs": "{{ site.website }}" },
+          "publisher": { "@id": "{{ site.website }}/#organization" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "{{ site.website }}/#software",
+          "name": "Shellui",
+          "url": "{{ site.website }}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web",
+          "license": "https://opensource.org/licenses/MIT",
+          "sameAs": ["{{ site.github }}", "{{ site.docs }}"],
+          "publisher": { "@id": "{{ site.website }}/#organization" }
+        }
+      ]
+    }
+    </script>
   </head>
-  <body class="flex min-h-full flex-col bg-background text-foreground antialiased">
+  <body class="dots flex min-h-full flex-col bg-background text-base text-foreground antialiased">
     {% include "logo-sprite.njk" %}
     {% include "nav.njk" %}
     <main class="relative z-10 flex-1">
       {{ content | safe }}
     </main>
     {% include "footer.njk" %}
-    <script src="/assets/js/alpine.min.js" defer></script>
-    <script src="/assets/js/elements.js" type="module"></script>
     <script src="/assets/js/site.js" defer></script>
   </body>
 </html>

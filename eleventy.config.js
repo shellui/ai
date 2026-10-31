@@ -23,6 +23,17 @@ function buildCss() {
   );
 }
 
+function inlineCss(outputDir) {
+  const cssFile = path.join(outputDir, "assets/css/site.css");
+  const css = fs.readFileSync(cssFile, "utf8");
+  for (const file of walkFiles(outputDir)) {
+    if (!file.endsWith(".html")) continue;
+    const html = fs.readFileSync(file, "utf8");
+    const out = html.replace(/<link rel="stylesheet" href="\/assets\/css\/site\.css"\s*\/?>/, () => `<style>${css}</style>`);
+    if (out !== html) fs.writeFileSync(file, out);
+  }
+}
+
 function contentHash(buffer) {
   return createHash("sha256").update(buffer).digest("hex").slice(0, 8);
 }
@@ -99,8 +110,6 @@ export default function (eleventyConfig) {
     "favicon.ico": "favicon.ico",
     "apple-touch-icon.png": "apple-touch-icon.png",
     "src/assets/js": "assets/js",
-    "node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.min.js",
-    "node_modules/@tailwindplus/elements/dist/index.js": "assets/js/elements.js",
   });
 
   eleventyConfig.addFilter("absoluteUrl", (url, base) => {
@@ -117,6 +126,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.on("eleventy.after", () => {
     buildCss();
+    inlineCss(path.join(root, "_site"));
     if (hashAssets) {
       fingerprintAssets(path.join(root, "_site"));
     }

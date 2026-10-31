@@ -21,3 +21,9 @@ jobs:
           grep -q 'data-agent-instructions' _site/index.html
           grep -q 'npx skills add shellui/skills' _site/index.html
           grep -q 'shellui.ai' _site/CNAME
+          grep -q '<loc>https://shellui.ai/</loc>' _site/sitemap.xml
+          grep -q 'Sitemap: https://shellui.ai/sitemap.xml' _site/robots.txt
+          key=$(jq -r .indexNowKey src/_data/site.json); grep -qx "$key" "_site/$key.txt"
+          grep -q 'href="https://shellui.ai/"' _site/index.html
+          if grep -q 'rel="canonical" href="https://shellui.com' _site/index.html; then exit 1; fi
+          if grep -q '"@type": "Organization"' _site/index.html; then exit 1; fi
