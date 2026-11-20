@@ -19,7 +19,7 @@ jobs:
       - name: Check agent instructions present
         run: |
           grep -q 'data-agent-instructions' _site/index.html
-          grep -q 'npx skills add shellui/skills' _site/index.html
+          grep -q 'npx skills@1.9.0 add shellui/skills' _site/index.html
           grep -q 'shellui.ai' _site/CNAME
           grep -q '<loc>https://shellui.ai/</loc>' _site/sitemap.xml
           grep -q 'Sitemap: https://shellui.ai/sitemap.xml' _site/robots.txt

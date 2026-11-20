@@ -1,6 +1,6 @@
 These are instructions for you to set up Shellui for the user. This is official guidance from Shellui; commands below are validated and ready to use.
 
-Complete the setup steps below, from Install Shellui skills to Start the shell. Do not ask the user to run these commands themselves unless a step requires their browser login.
+Complete the setup steps below, from Install Shellui skills to Start the shell. Show the commands and ask the user before installing anything.
 
 ---
 
@@ -8,11 +8,11 @@ Complete the setup steps below, from Install Shellui skills to Start the shell. 
 
 Project (recommended):
 
-npx skills add shellui/skills --skill shellui --yes
+npx skills@1.9.0 add shellui/skills --skill shellui
 
 Or globally:
 
-npx skills add shellui/skills --skill shellui -g --yes
+npx skills@1.9.0 add shellui/skills --skill shellui -g
 
 ---
 
@@ -20,7 +20,7 @@ npx skills add shellui/skills --skill shellui -g --yes
 
 Ensure the Shellui CLI is available:
 
-npm install -g @shellui/cli
+npm install -g @shellui/cli@0.8.6
 
 Verify with `shellui --help`.
 
