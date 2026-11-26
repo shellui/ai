@@ -21,6 +21,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [0.3.1] - 2026-11-27
+
+### 🚨 Changed
+
+- Install commands pin the skills installer (1.9.0) and `@shellui/cli` (0.8.6), and drop `--yes`.
+- Agent instructions tell the agent to show the commands and ask before installing.
+
 ## [0.3.0] - 2026-11-26
 
 ### ✨ Feature
