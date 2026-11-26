@@ -21,6 +21,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [0.3.0] - 2026-11-26
+
+### ✨ Feature
+
+- Homepage, agent instructions and llms.txt present the Shellui MCP at `https://ai.shellui.com/mcp`: sign-in and consent in the browser, Ask before changes as the default access level, and approval links for destructive actions.
+- Agent instructions tell agents to suggest MCP only when asked for live Shellui data, and to leave sign-in, consent and approvals to the person.
+
+### 🚨 Changed
+
+- shellui.ai serves `/llms.txt`. The footer links to it instead of the docs map.
+
 ## [0.2.0] - 2026-10-30
 
 ### ✨ Feature

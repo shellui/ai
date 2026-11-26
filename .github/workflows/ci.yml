@@ -27,3 +27,4 @@ jobs:
           grep -q 'href="https://shellui.ai/"' _site/index.html
           if grep -q 'rel="canonical" href="https://shellui.com' _site/index.html; then exit 1; fi
           if grep -q '"@type": "Organization"' _site/index.html; then exit 1; fi
+          python3 scripts/check-mcp-urls.py

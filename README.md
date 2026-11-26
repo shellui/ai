@@ -5,7 +5,7 @@ The landing page coding agents read to start with Shellui.
 [![CI](https://github.com/shellui/ai/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/shellui/ai/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-Tell your agent `fetch https://shellui.ai`. The page walks it through installing the [Shellui skills](https://github.com/shellui/skills), the CLI and the first project. This repo is the source of [shellui.ai](https://shellui.ai), built with [Eleventy](https://www.11ty.dev/).
+Tell your agent `fetch https://shellui.ai`. The page walks it through installing the [Shellui skills](https://github.com/shellui/skills), the CLI and the first project, and how to connect the [Shellui MCP](https://shellui.com/mcp/) at `https://ai.shellui.com/mcp`. This repo is the source of [shellui.ai](https://shellui.ai), built with [Eleventy](https://www.11ty.dev/).
 
 ## Get started
 
@@ -23,6 +23,7 @@ npm run dev
 - [shellui.ai](https://shellui.ai), the published page
 - [Shellui Skills](https://github.com/shellui/skills) and [skills.sh](https://skills.sh/shellui/skills/shellui)
 - [docs.shellui.com](https://docs.shellui.com) and the [writing guide](https://shellui.com/guidelines/writing/)
+- [Shellui MCP](https://shellui.com/mcp/) and [device login](https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account)
 - [CHANGELOG.md](CHANGELOG.md)
 
 ## Contributing

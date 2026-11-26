@@ -16,3 +16,11 @@ Canonical source lives in `shellui/website` (`content/guidelines/`, `skills/writ
 - Ban em dashes (`—`) and en dashes (`–`) used as punctuation; prefer a hyphen (`-`) or split the sentence
 - Straight quotes in markdown source; ellipsis `…`, not three dots `...`
 - Avoid banned filler: easy, simple, quick, seamless, robust, powerful, just, very, really, simply
+
+## Public MCP
+
+shellui.ai tells agents the Shellui MCP server is `https://ai.shellui.com/mcp`. Pages, `llms.txt` and agent instructions cite that URL only. Do not add another Shellui MCP host or path.
+
+Agent-facing text must say the person signs in and consents, the agent never completes consent, and the agent never handles tokens or codes. Recommend Ask before changes. Do not tell an agent to suggest MCP unless the person asked for live Shellui data.
+
+Identity, storage, hosting and email open at Ask even under Full access. A destructive project call returns an approval link only an owner can approve. Do not write that Full access lets an agent write everywhere without approval.
