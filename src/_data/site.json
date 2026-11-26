@@ -3,7 +3,7 @@
   "url": "https://shellui.ai",
   "website": "https://shellui.com",
   "hosting": "https://shellui.app",
-  "description": "One prompt installs the Shellui skills and CLI, scaffolds a project and starts the shell. The page also explains the Shellui MCP at https://ai.shellui.com/mcp.",
+  "description": "One prompt installs the Shellui skills and CLI, scaffolds a project and starts the shell. The page also explains how to connect the Shellui MCP.",
   "mcp": "https://ai.shellui.com/mcp",
   "mcpPage": "https://shellui.com/mcp/",
   "mcpDocs": "https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account",

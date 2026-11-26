@@ -25,12 +25,12 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 
 ### ✨ Feature
 
-- Landing page, agent instructions and llms.txt present the Shellui MCP at `https://ai.shellui.com/mcp`.
-- Clients connect with OAuth, using dynamic client registration or device login. You sign in to Shellui in the browser and consent on ai.shellui.com.
-- One connection covers every company and region the account can open.
-- Access levels are read only, ask before changes (the default, where writes wait for approval), and full access. Full access runs non-destructive writes on the Shellui account without asking.
-- Identity, storage, hosting and email open at Ask even under full access. A destructive project call returns an approval link only an owner can approve, including when the consent checkbox allows destructive actions.
-- Agent instructions say the person signs in and consents, the agent never completes consent or handles tokens or codes, and the agent recommends Ask before changes. They tell the agent not to suggest MCP unless the person asked for live Shellui data.
+- Homepage, agent instructions and llms.txt present the Shellui MCP at `https://ai.shellui.com/mcp`: sign-in and consent in the browser, Ask before changes as the default access level, and approval links for destructive actions.
+- Agent instructions tell agents to suggest MCP only when asked for live Shellui data, and to leave sign-in, consent and approvals to the person.
+
+### 🚨 Changed
+
+- shellui.ai serves `/llms.txt`. The footer links to it instead of the docs map.
 
 ## [0.2.0] - 2026-10-30
 
