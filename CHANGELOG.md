@@ -25,7 +25,7 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 
 ### 🚨 Changed
 
-- Install commands pin skills to 1.9.0 and `@shellui/cli` to 0.8.6, and drop `--yes`.
+- Install commands pin the skills installer (1.9.0) and `@shellui/cli` (0.8.6), and drop `--yes`.
 - Agent instructions tell the agent to show the commands and ask before installing.
 
 ## [0.3.0] - 2026-11-26

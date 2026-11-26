@@ -20,6 +20,8 @@ jobs:
         run: |
           grep -q 'data-agent-instructions' _site/index.html
           grep -q 'npx skills@1.9.0 add shellui/skills' _site/index.html
+          grep -q 'npm install -g @shellui/cli@0.8.6' _site/index.html
+          if grep -q -- '--yes' src/_includes/agent-instructions.txt; then exit 1; fi
           grep -q 'shellui.ai' _site/CNAME
           grep -q '<loc>https://shellui.ai/</loc>' _site/sitemap.xml
           grep -q 'Sitemap: https://shellui.ai/sitemap.xml' _site/robots.txt
