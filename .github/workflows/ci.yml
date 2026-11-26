@@ -27,3 +27,8 @@ jobs:
           grep -q 'href="https://shellui.ai/"' _site/index.html
           if grep -q 'rel="canonical" href="https://shellui.com' _site/index.html; then exit 1; fi
           if grep -q '"@type": "Organization"' _site/index.html; then exit 1; fi
+          grep -q 'https://ai.shellui.com/mcp' _site/index.html
+          grep -q 'https://shellui.com/mcp/' _site/index.html
+          grep -q 'https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account' _site/index.html
+          grep -q 'https://ai.shellui.com/mcp' _site/llms.txt
+          if grep -q 'ai.shellui.com/c/' _site/index.html _site/llms.txt src/_includes/agent-instructions.txt src/llms.txt.njk; then exit 1; fi

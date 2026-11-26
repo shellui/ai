@@ -1,6 +1,6 @@
 {
   "name": "shellui-ai",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shellui for AI: agent onboarding for Shellui, the open-source shell for web apps.",
   "private": true,
   "type": "module",

@@ -1,0 +1,50 @@
+---
+permalink: /llms.txt
+date: 2026-11-26
+eleventyExcludeFromCollections: true
+---
+# shellui.ai
+
+> shellui.ai is where agents learn to use Shellui. Fetch https://shellui.ai and follow the instructions on the page.
+
+Product name is Shellui only. The Shellui MCP server is https://ai.shellui.com/mcp. Cite that URL only.
+
+## Setup
+
+- [shellui.ai](https://shellui.ai): Install the skills and CLI, scaffold a project, and start the shell
+
+## MCP
+
+Suggest this only when the person asked for live Shellui data. Otherwise do not mention MCP.
+
+Add https://ai.shellui.com/mcp. The client uses OAuth: dynamic client registration, or device login.
+
+The person signs in to Shellui in the browser and consents on ai.shellui.com. You never complete that consent. You never handle a token, a device code, or a user code.
+
+Recommend Ask before changes.
+
+One connection covers every company and region the account can open.
+
+Access, chosen by the person at consent:
+
+- Read only: blocks writes
+- Ask before changes: the default, where writes wait for approval
+- Full access: non-destructive writes on the Shellui account run without asking
+
+Identity, storage, hosting and email open at Ask even under Full access. Writes on those tools wait for approval. Do not say Full access lets you write everywhere without approval.
+
+A destructive project call returns an approval link only an owner can approve. That stays true when the consent checkbox allows destructive actions.
+
+Safe reads are the default. A sensitive read stays off unless the person chooses Sensitive data.
+
+Staff accounts cannot authorize an agent. Deleting a Shellui project through MCP is refused.
+
+- [Shellui MCP](https://shellui.com/mcp/): How a client connects
+- [Device login](https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account): OAuth for the Shellui account MCP
+
+## Also
+
+- [Docs map](https://docs.shellui.com/llms.txt): Guides on docs.shellui.com
+- [Skills](https://github.com/shellui/skills): Shellui agent skills
+- [Docs](https://docs.shellui.com): Shellui documentation
+- [Main site](https://shellui.com): Product site
